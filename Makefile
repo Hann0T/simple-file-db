@@ -4,6 +4,7 @@ OBJ = $(patsubst src/%.c, obj/%.o, $(SRC))
 
 run: clean default
 	./$(TARGET) -f ./my_new_db.db -n
+	./$(TARGET) -f ./my_new_db.db -a "Timmy H.,123 some address,120"
 	#./$(TARGET) -f ./my_new_db.db -n # should fail, file already exists
 
 default: $(TARGET)

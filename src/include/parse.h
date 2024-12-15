@@ -19,7 +19,10 @@ typedef struct Employee {
 
 int create_db_header(int fd, dbheader_t **header_out);
 int validate_db_header(int fd, dbheader_t **header_out);
-int read_employees(int fd, dbheader_t **header_out, employee_t **employees_out);
-int output_file(int fd, dbheader_t *header);
+int read_employees(int fd, dbheader_t *header, employee_t **employees_out);
+int add_employee(dbheader_t *header, employee_t *employees, char *add_str);
+void list_employees(dbheader_t *header, employee_t *employees);
+employee_t* find_employee(dbheader_t *header, employee_t *employees, char *needle);
+int output_file(int fd, dbheader_t *header, employee_t *employees);
 
 #endif
